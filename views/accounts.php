@@ -10,7 +10,7 @@ include('includes/header.php');
 		<p class="margin-right">Bonjour <?php echo $_SESSION['name'] ;?></p>
 
 		<form action="../controllers/account.php" method="post">
-			<input type="hidden" name="token" value="<?php echo $token; ?>">
+			<!-- <input type="hidden" name="token" value="<?php echo $token; ?>"> -->
 			<input type="hidden" name="verif" value="">
 			<input type="submit" name="logout" value="Déconnexion">
 		</form>
@@ -34,7 +34,7 @@ include('includes/header.php');
 				<option value="<?php echo $value ;?>"><?php echo $value ;?></option>
 			<?php } ?>
 		</select>
-		<input type="hidden" name="token" value="<?php echo $token; ?>">
+		<!-- <input type="hidden" name="token" value="<?php //echo $token; ?>"> -->
 		<input type="hidden" name="verif" value="">
 		<input type="submit" name="new" value="Ouvrir un nouveau compte">
 	</form>
@@ -59,7 +59,7 @@ include('includes/header.php');
 					<h4>Dépot / Retrait</h4>
 					<form action="../controllers/account.php" method="post">
 						<input type="hidden" name="id" value="<?php echo $account->getId(); ?>"  required>
-						<input type="hidden" name="token" value="<?php echo $token; ?>">
+						<!-- <input type="hidden" name="token" value="<?php //echo $token; ?>"> -->
 						<input type="hidden" name="verif" value="">
 						<input type="number" name="balance" placeholder="Entrer une somme à débiter/créditer" required>
 						<input type="submit" name="payment" value="Créditer">
@@ -89,7 +89,7 @@ include('includes/header.php');
 								}
 					 		?>
 						</select>
-						<input type="hidden" name="token" value="<?php echo $token; ?>">
+						<!-- <input type="hidden" name="token" value="<?php //echo $token; ?>"> -->
 						<input type="hidden" name="verif" value="">
 						<input type="submit" name="transfer" value="Transférer l'argent">
 					</form>
@@ -99,7 +99,7 @@ include('includes/header.php');
 			 		?>
 
 			 		<form class="delete" action="../controllers/account.php" method="post">
-						<input type="hidden" name="token" value="<?php echo $token; ?>">
+						<!-- <input type="hidden" name="token" value="<?php //echo $token; ?>"> -->
 						<input type="hidden" name="verif" value="">
 				 		<input type="hidden" name="id" value="<?php echo $account->getId(); ?>"  required>
 				 		<input type="submit" name="delete" value="Supprimer le compte">

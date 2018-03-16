@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (empty($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-}
-$token = $_SESSION['token'];
+// if (empty($_SESSION['token'])) {
+//     $_SESSION['token'] = bin2hex(random_bytes(32));
+// }
+// $token = $_SESSION['token'];
 
 // Chargement automatique des classes
 require('../services/Autoloader.php');
@@ -15,9 +15,9 @@ $userManager = new UserManager();
 // Si un formulaire est soumis
 if($_POST){
 
-	if (!empty($_POST['token']) && empty($_POST['verif'])) {
-
-	    if (hash_equals($_SESSION['token'], $_POST['token'])) {
+	// if (!empty($_POST['token']) && empty($_POST['verif'])) {
+	//
+	//     if (hash_equals($_SESSION['token'], $_POST['token'])) {
 
 					 // Si tous les champs sont remplis
 					 if((isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password']))){
@@ -53,12 +53,12 @@ if($_POST){
 
 					 }
 
-	    }
-			else
-			{
-	         $error_message = "erreur !";
-	    }
-	}
+	//     }
+	// 		else
+	// 		{
+	//          $error_message = "erreur !";
+	//     }
+	// }
 
 	else
 	{

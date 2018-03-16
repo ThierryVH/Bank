@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (empty($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-}
-$token = $_SESSION['token'];
+// if (empty($_SESSION['token'])) {
+//     $_SESSION['token'] = bin2hex(random_bytes(32));
+// }
+// $token = $_SESSION['token'];
 
 // Chargement automatique des classes
 require('../services/Autoloader.php');
@@ -20,9 +20,9 @@ $manager = new AccountManager();
 // Si un formulaire a été envoyé
 if($_POST){
 
-	if(empty($_POST['verif']) && !empty($_POST['token'])){
-
-		if (hash_equals($_SESSION['token'], $_POST['token'])) {
+	// if(empty($_POST['verif']) && !empty($_POST['token'])){
+	//
+	// 	if (hash_equals($_SESSION['token'], $_POST['token'])) {
 			// Si le formulaire de déconnexion est soumis, on détruit les variables de session et on redirige vers la page de connexion
 			if(isset($_POST['logout'])){
 				session_destroy();
@@ -115,13 +115,13 @@ if($_POST){
 				$manager->delete($account);
 			}
 
-		}
-		else
-		{
-			$error_message = 'erreur';
-		}
-
-	}
+	// 	}
+	// 	else
+	// 	{
+	// 		$error_message = 'erreur';
+	// 	}
+	//
+	// }
 	else
 	{
 		session_destroy();

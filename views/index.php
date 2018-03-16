@@ -21,7 +21,7 @@ include('includes/header.php');
 
       <input placeholder="E-mail" name="mail" type="email" value="<?php if(isset($_SESSION['mail'])){ echo $_SESSION['mail'] ;}?>" autofocus required>
       <input placeholder="Password" name="password" type="password" required>
-			<input type="hidden" name="token" value="<?php echo $token; ?>">
+			<!-- <input type="hidden" name="token" value="<?php echo $token; ?>"> -->
 			<input type="hidden" name="verif" value="">
       <input type="submit" name="connection" value="Me connecter">
 

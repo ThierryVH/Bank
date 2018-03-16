@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if (empty($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-}
-$token = $_SESSION['token'];
+// if (empty($_SESSION['token'])) {
+//     $_SESSION['token'] = bin2hex(random_bytes(32));
+// }
+// $token = $_SESSION['token'];
 
 // Chargement automatique des classes
 require('../services/Autoloader.php');
@@ -16,9 +16,9 @@ $userManager = new UserManager();
 // Si un formulaire est soumis
 if($_POST){
 
-	if(empty($_POST['verif']) && !empty($_POST['token'])){
-
-		  if (hash_equals($_SESSION['token'], $_POST['token'])) {
+	// if(empty($_POST['verif']) && !empty($_POST['token'])){
+	//
+	// 	  if (hash_equals($_SESSION['token'], $_POST['token'])) {
 
 					if((isset($_POST['name']) && !empty($_POST['name'])) && (isset($_POST['mail']) && !empty($_POST['mail'])) && (isset($_POST['password']) && !empty($_POST['password'])) && (isset($_POST['confirmation']) && !empty($_POST['confirmation']))){
 
@@ -55,12 +55,12 @@ if($_POST){
 							}
 						}
 					}
-				}
-				else
-				{
-					$error_message = 'Erreur';	
-				}
-	}
+	// 			}
+	// 			else
+	// 			{
+	// 				$error_message = 'Erreur';
+	// 			}
+	// }
 	else
 	{
 		$error_message = 'Erreur';
